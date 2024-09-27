@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fall/fall.dart';
+import 'package:flutterfall/flutterfall.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
           child: const Stack(
             children: [
               Positioned.fill(
-                  child: FallWidget(
+                child: FlutterFall(
                 isRunning: true,
                 totalObjects: 100,
                 speed: 0.05,

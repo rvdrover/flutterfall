@@ -6,7 +6,7 @@ import 'package:flutter/services.dart'; // For asset loading
 import 'fall_object.dart';
 import 'fall_painter.dart';
 
-class FallWidget extends StatefulWidget {
+class FlutterFall extends StatefulWidget {
    /// The total number of falling objects. 
   /// This determines how many particles will be rendered on the screen.
   final int totalObjects;
@@ -39,7 +39,7 @@ class FallWidget extends StatefulWidget {
   /// Defaults to 1.0, allowing for a gentle sway effect.
   final double windSpeed;
 
-  const FallWidget({
+  const FlutterFall({
     super.key,
     this.totalObjects = 20, // Default number of falling objects
     this.speed = 0.05, // Default speed of falling objects
@@ -55,7 +55,7 @@ class FallWidget extends StatefulWidget {
   FallWidgetState createState() => FallWidgetState();
 }
 
-class FallWidgetState extends State<FallWidget> with SingleTickerProviderStateMixin {
+class FallWidgetState extends State<FlutterFall> with SingleTickerProviderStateMixin {
   late final AnimationController controller;
   double W = 0;
   double H = 0;

@@ -1,4 +1,4 @@
-# fall
+# flutterfall
 
 A Flutter package to create falling effects using custom images.
 
@@ -19,16 +19,16 @@ dependencies:
 Import it where you want to use it:
 
 ```dart
-import 'package:fall/fall.dart';
+import 'package:flutterfall/flutterfall.dart';
 ```
 
 ## Usage
 
-Enclose your widget with FallWidget:
+Enclose your widget with FlutterFall:
 
 ```dart
 Scaffold(
-  body: FallWidget(
+  body: FlutterFall(
     isRunning: true, // Controls whether the falling effect is active.
     totalObjects: 20, // Number of objects to fall
     speed: 0.05, // Speed of falling objects
