@@ -1,39 +1,57 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# fall
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/tools/pub/writing-package-pages).
-
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/to/develop-packages).
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+A Flutter package to create falling effects using custom images.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+- Create a falling effect using images provided by the user.
+- Customizable parameters for speed, size, rotation, and wind effect.
 
-## Getting started
+## Getting Started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+Add this library to your `pubspec.yaml`:
+
+```yaml
+dependencies:
+  fall: ^1.0.0
+```
+
+Import it where you want to use it:
+
+```dart
+import 'package:fall/fall.dart';
+```
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+Enclose your widget with FallWidget:
 
 ```dart
-const like = 'sample';
+Scaffold(
+  body: FallWidget(
+    isRunning: true, // Controls whether the falling effect is active.
+    totalObjects: 20, // Number of objects to fall
+    speed: 0.05, // Speed of falling objects
+    particleImage: ['assets/snowflake.png'], // List of image URLs or asset paths
+    particleSize: 20, // Size of the particles
+    rotationSpeed: 0.05, // Rotation speed of particles
+    windSpeed: 1, // Wind speed for particle movement
+  ),
+);
+```
+Optional named arguments:
+
+```dart
+    bool isRunning: Controls whether the falling effect is active. Defaults to true.
+    int totalObjects: Number of objects to fall. Defaults to 20.
+    double speed: Speed of falling objects. Defaults to 0.05.
+    List<String> particleImage: List of image URLs or asset paths. Required.
+    bool startFromTop: If true, the objects will start falling from the top. Defaults to true.
+    double? particleSize: Size of each falling particle. Defaults to 20.
+    double rotationSpeed: Speed of rotation for the falling particles. Defaults to 0.05.
+    double windSpeed: Speed of the wind effect. Defaults to 1.0.
 ```
 
-## Additional information
+## Additional Information
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+This project is inspired by [GitHub - Punkachu/SnowingWidget](https://github.com/Punkachu/SnowingWidget). 
