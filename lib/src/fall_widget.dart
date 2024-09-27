@@ -7,35 +7,35 @@ import 'fall_object.dart';
 import 'fall_painter.dart';
 
 class FlutterFall extends StatefulWidget {
-   /// The total number of falling objects. 
+  /// The total number of falling objects.
   /// This determines how many particles will be rendered on the screen.
   final int totalObjects;
 
-  /// The speed of falling objects. 
+  /// The speed of falling objects.
   /// A higher value will make the particles fall faster.
   final double speed;
 
-  /// Controls whether the falling effect is active. 
+  /// Controls whether the falling effect is active.
   /// When set to true, the particles will be animated.
   final bool isRunning;
 
-  /// If true, the objects will start falling from the top of the screen. 
+  /// If true, the objects will start falling from the top of the screen.
   /// Defaults to true, allowing particles to enter from the top.
   final bool startFromTop;
 
-  /// List of image URLs or asset paths to be used as falling particles. 
+  /// List of image URLs or asset paths to be used as falling particles.
   /// This is a required parameter to define the visuals of the falling objects.
   final List<String> particleImage;
 
-  /// The size of each falling particle. 
+  /// The size of each falling particle.
   /// Defaults to 20, but can be adjusted to make particles larger or smaller.
   final double? particleSize;
 
-  /// Speed of rotation for the falling particles. 
+  /// Speed of rotation for the falling particles.
   /// Defaults to 0.05, which controls how quickly particles spin as they fall.
   final double rotationSpeed;
 
-  /// Speed of the wind effect applied to the falling particles. 
+  /// Speed of the wind effect applied to the falling particles.
   /// Defaults to 1.0, allowing for a gentle sway effect.
   final double windSpeed;
 
@@ -55,7 +55,8 @@ class FlutterFall extends StatefulWidget {
   FallWidgetState createState() => FallWidgetState();
 }
 
-class FallWidgetState extends State<FlutterFall> with SingleTickerProviderStateMixin {
+class FallWidgetState extends State<FlutterFall>
+    with SingleTickerProviderStateMixin {
   late final AnimationController controller;
   double W = 0;
   double H = 0;
@@ -90,12 +91,15 @@ class FallWidgetState extends State<FlutterFall> with SingleTickerProviderStateM
     for (int i = 0; i < widget.totalObjects; i++) {
       final double density = _rnd.nextDouble() * widget.speed;
       final double x = _rnd.nextDouble() * W;
-      final double y = widget.startFromTop ? -_rnd.nextDouble() * H : _rnd.nextDouble() * H;
+      final double y =
+          widget.startFromTop ? -_rnd.nextDouble() * H : _rnd.nextDouble() * H;
 
-      String imageUrl = widget.particleImage[_rnd.nextInt(widget.particleImage.length)];
+      String imageUrl =
+          widget.particleImage[_rnd.nextInt(widget.particleImage.length)];
       ui.Image image = await _loadImage(imageUrl);
 
-      final double size = widget.particleSize! * (0.1 + _rnd.nextDouble() * 0.4);
+      final double size =
+          widget.particleSize! * (0.1 + _rnd.nextDouble() * 0.4);
       final double rotation = _rnd.nextDouble() * 2 * pi;
       final double wind = (_rnd.nextDouble() * 2 - 1) * widget.windSpeed;
 
@@ -145,7 +149,8 @@ class FallWidgetState extends State<FlutterFall> with SingleTickerProviderStateM
       willChange: widget.isRunning,
       isComplex: true,
       size: Size.infinite,
-      painter: FallPainter(isRunning: widget.isRunning, objects: _fallingObjects),
+      painter:
+          FallPainter(isRunning: widget.isRunning, objects: _fallingObjects),
     );
   }
 }

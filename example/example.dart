@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
           child: const Stack(
             children: [
               Positioned.fill(
-                child: FlutterFall(
+                  child: FlutterFall(
                 isRunning: true,
                 totalObjects: 100,
                 speed: 0.05,
