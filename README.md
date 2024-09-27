@@ -13,7 +13,7 @@ Add this library to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  fall: ^1.0.0
+  flutterfall: ^1.0.0
 ```
 
 Import it where you want to use it:
