@@ -9,7 +9,7 @@ A Flutter package to create falling effects using custom images.
 
 ## Demo
 
-<img width="300" src=".gif"/>
+<img width="300" src="https://github.com/rvdrover/fall/blob/39d035b24e13fab6ad4e2e0529351bcd5c777a54/demo.gif"/>
 
 ## Getting Started
 

@@ -1,3 +1,7 @@
+## 1.0.4
+
+*  Add Demo
+
 ## 1.0.3
 
 *  Update documentation
