@@ -7,13 +7,17 @@ A Flutter package to create falling effects using custom images.
 - Create a falling effect using images provided by the user.
 - Customizable parameters for speed, size, rotation, and wind effect.
 
+## Demo
+
+<img width="300" src=".gif"/>
+
 ## Getting Started
 
 Add this library to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  flutterfall: ^1.0.3
+  flutterfall: ^1.0.4
 ```
 
 Import it where you want to use it:
