@@ -21,12 +21,12 @@ class MyApp extends StatelessWidget {
               Positioned.fill(
                   child: FlutterFall(
                 isRunning: true,
-                totalObjects: 100,
+                totalObjects: 40,
                 speed: 0.05,
                 particleImage: ['assets/snowflake.png'],
-                particleSize: 20,
-                rotationSpeed: 0.05,
-                windSpeed: 1,
+                particleSize: 30,
+                rotationSpeed: 0.02,
+                windSpeed: 1.0,
               ))
             ],
           ),

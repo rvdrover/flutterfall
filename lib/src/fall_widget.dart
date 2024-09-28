@@ -20,7 +20,7 @@ class FlutterFall extends StatefulWidget {
   final bool isRunning;
 
   /// If true, the objects will start falling from the top of the screen.
-  /// Defaults to true, allowing particles to enter from the top.
+  /// Defaults to fals, allowing particles to enter from the whole screen.
   final bool startFromTop;
 
   /// List of image URLs or asset paths to be used as falling particles.
@@ -28,7 +28,7 @@ class FlutterFall extends StatefulWidget {
   final List<String> particleImage;
 
   /// The size of each falling particle.
-  /// Defaults to 20, but can be adjusted to make particles larger or smaller.
+  /// Defaults to 30, but can be adjusted to make particles larger or smaller.
   final double? particleSize;
 
   /// Speed of rotation for the falling particles.
@@ -41,13 +41,13 @@ class FlutterFall extends StatefulWidget {
 
   const FlutterFall({
     super.key,
-    this.totalObjects = 20, // Default number of falling objects
+    this.totalObjects = 40, // Default number of falling objects
     this.speed = 0.05, // Default speed of falling objects
     this.isRunning = true, // Default is to run the animation
     required this.particleImage, // Required list of particle images
-    this.startFromTop = true, // Default is to start from the top
-    this.particleSize = 20, // Default size of particles
-    this.rotationSpeed = 0.05, // Default rotation speed
+    this.startFromTop = false, // Default is to start from the whole screen
+    this.particleSize = 30, // Default size of particles
+    this.rotationSpeed = 0.02, // Default rotation speed
     this.windSpeed = 1.0, // Default wind speed
   });
 
@@ -100,8 +100,11 @@ class FallWidgetState extends State<FlutterFall>
 
       final double size =
           widget.particleSize! * (0.1 + _rnd.nextDouble() * 0.4);
-      final double rotation = _rnd.nextDouble() * 2 * pi;
-      final double wind = (_rnd.nextDouble() * 2 - 1) * widget.windSpeed;
+      final double rotation =
+          widget.rotationSpeed == 0.0 ? 0.0 : _rnd.nextDouble() * 2 * pi;
+      final double wind = widget.windSpeed == 0.0
+          ? 0.0
+          : (_rnd.nextDouble() * 2 - 1) * widget.windSpeed;
 
       _fallingObjects.add(
         FallObject(
