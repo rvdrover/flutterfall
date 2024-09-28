@@ -9,7 +9,7 @@ A Flutter package to create falling effects using custom images.
 
 ## Demo
 
-<img width="300" src="https://github.com/rvdrover/fall/blob/39d035b24e13fab6ad4e2e0529351bcd5c777a54/demo.gif"/>
+<img width="300" src="https://raw.githubusercontent.com/rvdrover/flutterfall/39d035b24e13fab6ad4e2e0529351bcd5c777a54/demo.gif"/>
 
 ## Getting Started
 
@@ -17,7 +17,7 @@ Add this library to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  flutterfall: ^1.0.4
+  flutterfall: ^1.0.5
 ```
 
 Import it where you want to use it:
