@@ -35,11 +35,11 @@ class FallController {
   /// [particleRotationSpeed] controls how fast the particles rotate while falling.
   /// [particleWindSpeed] controls how the wind affects the horizontal movement of the particles.
   FallController({
-    this.totalParticles = 40,  // Default total particles
-    this.particleFallSpeed = 0.05,  // Default fall speed
-    this.particleSize = 30.0,  // Default particle size
-    this.particleRotationSpeed = 0.02,  // Default rotation speed
-    this.particleWindSpeed = 1.0,  // Default wind speed
+    this.totalParticles = 40, // Default total particles
+    this.particleFallSpeed = 0.05, // Default fall speed
+    this.particleSize = 30.0, // Default particle size
+    this.particleRotationSpeed = 0.02, // Default rotation speed
+    this.particleWindSpeed = 1.0, // Default wind speed
   });
 
   /// A private method that notifies the assigned callback function of any updates to the particle properties.
@@ -68,53 +68,62 @@ class FallController {
   ///
   /// This method sets the [totalParticles] to the new value and triggers the callback to notify the change.
   void updateTotalParticles(int newTotal) {
-    totalParticles = newTotal;  // Set the new total number of particles
-    _notifyUpdate(totalObjects: totalParticles);  // Notify any listeners of the update
+    totalParticles = newTotal; // Set the new total number of particles
+    _notifyUpdate(
+        totalObjects: totalParticles); // Notify any listeners of the update
   }
 
   /// Updates the speed at which particles fall.
   ///
   /// This method sets the [particleFallSpeed] to the new value and triggers the callback to notify the change.
   void updateParticleFallSpeed(double newSpeed) {
-    particleFallSpeed = newSpeed;  // Set the new fall speed for particles
-    _notifyUpdate(speed: particleFallSpeed);  // Notify any listeners of the update
+    particleFallSpeed = newSpeed; // Set the new fall speed for particles
+    _notifyUpdate(
+        speed: particleFallSpeed); // Notify any listeners of the update
   }
 
   /// Updates the size of the falling particles.
   ///
   /// This method sets the [particleSize] to the new value and triggers the callback to notify the change.
   void updateParticleSize(double newSize) {
-    particleSize = newSize;  // Set the new size for particles
-    _notifyUpdate(particleSize: particleSize);  // Notify any listeners of the update
+    particleSize = newSize; // Set the new size for particles
+    _notifyUpdate(
+        particleSize: particleSize); // Notify any listeners of the update
   }
 
   /// Updates the wind speed that affects the particles' horizontal movement.
   ///
   /// This method sets the [particleWindSpeed] to the new value and triggers the callback to notify the change.
   void updateParticleWindSpeed(double newWindSpeed) {
-    particleWindSpeed = newWindSpeed;  // Set the new wind speed
-    _notifyUpdate(windSpeed: particleWindSpeed);  // Notify any listeners of the update
+    particleWindSpeed = newWindSpeed; // Set the new wind speed
+    _notifyUpdate(
+        windSpeed: particleWindSpeed); // Notify any listeners of the update
   }
 
   /// Updates the rotation speed of the particles.
   ///
   /// This method sets the [particleRotationSpeed] to the new value and triggers the callback to notify the change.
   void updateParticleRotationSpeed(double newRotationSpeed) {
-    particleRotationSpeed = newRotationSpeed;  // Set the new rotation speed for particles
-    _notifyUpdate(rotationSpeed: particleRotationSpeed);  // Notify any listeners of the update
+    particleRotationSpeed =
+        newRotationSpeed; // Set the new rotation speed for particles
+    _notifyUpdate(
+        rotationSpeed:
+            particleRotationSpeed); // Notify any listeners of the update
   }
 
   /// The setter for the `onUpdate` callback function. This setter allows the developer to assign a callback function
   /// that will be called whenever one of the properties is updated.
   ///
   /// The callback function can handle changes to properties like the total number of particles, speed, size, etc.
-  set onUpdate(Function({
-    int? totalObjects,
-    double? speed,
-    double? particleSize,
-    double? windSpeed,
-    double? rotationSpeed,
-  })? callback) {
-    _onUpdate = callback;  // Assign the provided callback to the `_onUpdate` variable
+  set onUpdate(
+      Function({
+        int? totalObjects,
+        double? speed,
+        double? particleSize,
+        double? windSpeed,
+        double? rotationSpeed,
+      })? callback) {
+    _onUpdate =
+        callback; // Assign the provided callback to the `_onUpdate` variable
   }
 }

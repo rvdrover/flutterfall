@@ -78,11 +78,14 @@ class FallWidgetState extends State<FlutterFall> with TickerProviderStateMixin {
     super.initState();
 
     // Initialize values based on the fallController or fallback to widget defaults
-    _totalObjects = widget.fallController?.totalParticles ?? widget.totalParticles;
+    _totalObjects =
+        widget.fallController?.totalParticles ?? widget.totalParticles;
     _speed = widget.fallController?.particleFallSpeed ?? widget.particleSpeed;
     _particleSize = widget.fallController?.particleSize ?? widget.particleSize!;
-    _rotationSpeed = widget.fallController?.particleRotationSpeed ?? widget.particleRotationSpeed;
-    _windSpeed = widget.fallController?.particleWindSpeed ?? widget.particleWindSpeed;
+    _rotationSpeed = widget.fallController?.particleRotationSpeed ??
+        widget.particleRotationSpeed;
+    _windSpeed =
+        widget.fallController?.particleWindSpeed ?? widget.particleWindSpeed;
 
     // Listen for updates to fallController and apply changes dynamically
     widget.fallController?.onUpdate = ({
@@ -105,7 +108,8 @@ class FallWidgetState extends State<FlutterFall> with TickerProviderStateMixin {
     controller = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 30),
-    )..addListener(() {
+    )
+      ..addListener(() {
         if (mounted) {
           setState(() {
             _updateObjects(); // Update the position of falling particles on each frame
@@ -144,19 +148,25 @@ class FallWidgetState extends State<FlutterFall> with TickerProviderStateMixin {
   /// Create a single falling particle with random properties.
   Future<FallObject> _createFallObject() async {
     final double density = Random().nextDouble() * _speed; // Random speed
-    final double x = Random().nextDouble() * MediaQuery.of(context).size.width; // Random horizontal position
+    final double x = Random().nextDouble() *
+        MediaQuery.of(context).size.width; // Random horizontal position
     final double y = widget.startFromTop
-        ? -Random().nextDouble() * MediaQuery.of(context).size.height // Start from top if set
-        : Random().nextDouble() * MediaQuery.of(context).size.height; // Random vertical position
+        ? -Random().nextDouble() *
+            MediaQuery.of(context).size.height // Start from top if set
+        : Random().nextDouble() *
+            MediaQuery.of(context).size.height; // Random vertical position
 
     // Randomly select an image for the particle
-    String imageUrl = widget.particleImages[Random().nextInt(widget.particleImages.length)];
+    String imageUrl =
+        widget.particleImages[Random().nextInt(widget.particleImages.length)];
     ui.Image image = await _loadImage(imageUrl);
 
     // Randomize particle size, rotation, and wind effect
     final double size = _particleSize * (0.1 + Random().nextDouble() * 0.4);
-    final double rotation = Random().nextDouble() * 2 * pi; // Random rotation angle
-    final double wind = (Random().nextDouble() * 2 - 1) * _windSpeed; // Random horizontal movement
+    final double rotation =
+        Random().nextDouble() * 2 * pi; // Random rotation angle
+    final double wind = (Random().nextDouble() * 2 - 1) *
+        _windSpeed; // Random horizontal movement
 
     return FallObject(
       x: x,
@@ -204,8 +214,10 @@ class FallWidgetState extends State<FlutterFall> with TickerProviderStateMixin {
   /// Update the properties of each falling particle (position, rotation, etc.).
   void _updateObjects() {
     for (FallObject obj in _fallingObjects) {
-      obj.y += (cos(obj.density) + obj.size).abs() * _speed; // Update vertical position
-      obj.x += sin(obj.density + obj.wind) * _speed; // Update horizontal position based on wind
+      obj.y += (cos(obj.density) + obj.size).abs() *
+          _speed; // Update vertical position
+      obj.x += sin(obj.density + obj.wind) *
+          _speed; // Update horizontal position based on wind
 
       obj.rotation += _rotationSpeed * 0.05; // Apply rotation to the particle
       obj.x += sin(obj.wind) * 0.5; // Apply additional wind effect
@@ -225,9 +237,12 @@ class FallWidgetState extends State<FlutterFall> with TickerProviderStateMixin {
     // Paint the falling particles on the screen using a custom painter
     return CustomPaint(
       willChange: widget.isRunning, // Optimize for when animation is running
-      isComplex: true, // Declare the custom paint as complex to improve performance
+      isComplex:
+          true, // Declare the custom paint as complex to improve performance
       size: Size.infinite, // Fill the entire available space
-      painter: FallPainter(isRunning: widget.isRunning, particles: _fallingObjects), // Custom painter for particles
+      painter: FallPainter(
+          isRunning: widget.isRunning,
+          particles: _fallingObjects), // Custom painter for particles
     );
   }
 }
