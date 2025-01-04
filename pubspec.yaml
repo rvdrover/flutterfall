@@ -1,12 +1,12 @@
 name: flutterfall
 description: "A Flutter package to create falling effects using custom images."
-version: 1.0.5
+version: 1.0.6
 homepage: https://github.com/rvdrover/flutterfall
 repository: https://github.com/rvdrover/flutterfall
 issue_tracker: https://github.com/rvdrover/flutterfall/issues
 
 environment:
-  sdk: ^3.5.1
+  sdk: ^3.6.0
   flutter: ">=1.17.0"
 
 dependencies:
@@ -16,5 +16,5 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^4.0.0
+  flutter_lints: ^5.0.0
 
