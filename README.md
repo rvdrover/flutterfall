@@ -15,13 +15,13 @@ A Flutter package to create falling effects using custom images. Customize parti
 
 This example shows a static falling effect with default settings.
 
-![Static Demo](https://raw.githubusercontent.com/rvdrover/flutterfall/39d035b24e13fab6ad4e2e0529351bcd5c777a54/demo.gif)
+![Static Demo](https://github.com/rvdrover/flutterfall/blob/1.0.6/demo_static.gif?raw=true)
 
 ### Dynamic Controller Demo
 
 This demo demonstrates dynamic updates using sliders to control particle properties like speed, size, wind effect, rotate effect and total particles.
 
-![Dynamic Demo](https://raw.githubusercontent.com/rvdrover/flutterfall/39d035b24e13fab6ad4e2e0529351bcd5c777a54/demo.gif)
+![Dynamic Demo](https://github.com/rvdrover/flutterfall/blob/1.0.6/demo_dynamic.gif?raw=true)
 
 ## Getting Started
 
