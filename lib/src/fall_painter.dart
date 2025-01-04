@@ -2,17 +2,17 @@ import 'package:flutter/material.dart';
 import 'fall_object.dart';
 
 class FallPainter extends CustomPainter {
-  final List<FallObject> objects;
+  final List<FallObject> particles;
   final bool isRunning;
 
   FallPainter({
     required this.isRunning,
-    required this.objects,
+    required this.particles,
   });
 
   @override
   void paint(Canvas canvas, Size size) {
-    for (FallObject obj in objects) {
+    for (FallObject obj in particles) {
       final Rect srcRect = Rect.fromLTWH(
           0, 0, obj.image.width.toDouble(), obj.image.height.toDouble());
       final Rect dstRect =

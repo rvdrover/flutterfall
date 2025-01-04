@@ -1,3 +1,17 @@
+## v1.0.6
+
+### New Features:
+- Enhanced performance and responsiveness for dynamic updates of particle properties, ensuring smoother interactions.
+- All particle properties now require dynamic setters to notify listeners of changes.
+
+### Breaking Changes:
+- **Updated Property Names**:
+  - `totalParticles`
+  - `particleFallSpeed`
+  - `particleSize`
+  - `particleRotationSpeed`
+  - `particleWindSpeed`
+
 ## 1.0.5
 
 *  Quick Fix
@@ -22,7 +36,7 @@
 ## 1.0.1
 
 *  Fix issues in documentation
-*  Fix issues in changelog
+*  Fix issues in change log
 
 ## 1.0.0
 
